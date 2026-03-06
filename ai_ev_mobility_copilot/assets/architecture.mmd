@@ -1,0 +1,55 @@
+flowchart LR
+
+subgraph User Layer
+A[Driver Input<br>Trip Preferences<br>Battery Level<br>Vehicle Selection]
+end
+
+subgraph AI Copilot Layer
+B[Natural Language Preference Parsing]
+C[RAG Knowledge Retrieval]
+D[EV Guidance Context]
+end
+
+subgraph Data Layer
+E[Route Dataset<br>Road Trip Corridors]
+F[Vehicle Profiles<br>Battery Capacity<br>Efficiency]
+G[Charging Network Data<br>Station Power<br>Location]
+H[EV Knowledge Base<br>Charging Best Practices]
+end
+
+subgraph Optimization Engine
+I[Trip Optimization Engine]
+J[Energy Consumption Model]
+K[Charging Stop Selection]
+end
+
+subgraph Output Layer
+L[Optimized Charging Plan]
+M[Trip Time Estimate]
+N[Sustainability Score]
+O[Interactive Copilot Interface]
+end
+
+A --> B
+B --> C
+C --> H
+H --> D
+
+A --> I
+E --> I
+F --> I
+G --> I
+
+D --> B
+B --> I
+
+I --> J
+J --> K
+
+K --> L
+K --> M
+K --> N
+
+L --> O
+M --> O
+N --> O
