@@ -1,31 +1,21 @@
 # AI EV Mobility Copilot
 
-AI-powered EV road trip planning assistant that recommends optimized charging stops, incorporates sustainability-aware driving guidance, and supports natural language trip preferences using RAG and AI reasoning.
+AI-powered EV road trip planning assistant that recommends optimized charging stops, incorporates sustainability-aware driving guidance, and supports natural language trip preferences using Retrieval-Augmented Generation (RAG) and optimization logic.
+
+This project demonstrates how AI systems can power intelligent mobility copilots for electric vehicles by combining route-aware charging optimization, EV knowledge retrieval, and explainable recommendations.
 
 ---
 
 # Project Objective
 
-Long-distance EV travel still creates friction for drivers due to:
+Long-distance EV travel still introduces friction for drivers due to:
 
-• range anxiety  
-• inefficient charging decisions  
-• uncertainty about charging availability  
-• lack of proactive trip planning tools  
+- range anxiety
+- inefficient charging decisions
+- uncertainty around charging availability
+- lack of proactive trip planning tools
 
-This project demonstrates how AI can power a **Mobility Copilot** that proactively plans EV road trips using battery constraints, route-aware charging infrastructure, and sustainability guidance.
-
----
-
-# Key Features
-
-• Real road trip simulation across major US EV corridors  
-• Battery-aware charging stop optimization  
-• Sustainability scoring for route efficiency  
-• RAG-based EV knowledge retrieval  
-• Natural language trip preference parsing  
-• AI-powered charging recommendation logic  
-• Graceful fallback logic when LLM services are unavailable
+The goal of this project is to design an **AI-powered mobility copilot** that assists EV drivers in planning efficient long-distance trips by predicting charging needs, recommending optimal charging stops, and integrating sustainability-aware driving guidance.
 
 ---
 
@@ -35,37 +25,23 @@ This project demonstrates how AI can power a **Mobility Copilot** that proactive
 
 ### High-Level Flow
 
-1. Driver enters trip request and preferences  
-2. System retrieves EV guidance using RAG knowledge base  
-3. Trip optimizer evaluates battery range, charging speed, and route distance  
-4. Charging stops are selected to minimize travel time while maintaining battery safety buffer  
-5. Copilot presents optimized charging plan with sustainability score
+1. Driver enters trip request and preferences
+2. System retrieves EV guidance from a knowledge base using RAG
+3. Trip optimizer evaluates battery range, route distance, and charger characteristics
+4. Charging stops are selected to minimize travel time while maintaining a safe battery buffer
+5. Copilot generates a recommended charging plan with sustainability insights
 
 ---
 
-# Prototype Screenshots
+# Key Features
 
-### Trip Planning Interface
-
-![Hero](assets/mercedes_hero.png)
-
----
-
-### EV Knowledge Retrieval (RAG)
-
-![RAG](assets/mercedes_rag.png)
-
----
-
-### Trip Metrics
-
-![KPIs](assets/mercedes_kpis.png)
-
----
-
-### Optimized Charging Plan
-
-![Plan](assets/mercedes_plan.png)
+- EV road trip planning prototype
+- Battery-aware charging stop optimization
+- Route-specific charger recommendation
+- Sustainability scoring for driving efficiency
+- Natural language trip preference input
+- RAG-based EV charging guidance retrieval
+- AI-assisted planning with graceful fallback logic when LLM services are unavailable
 
 ---
 
@@ -73,30 +49,35 @@ This project demonstrates how AI can power a **Mobility Copilot** that proactive
 
 The prototype combines multiple AI and optimization components.
 
-### RAG Knowledge Retrieval
+## Retrieval-Augmented Knowledge (RAG)
 
-A knowledge base of EV charging best practices is embedded using `sentence-transformers` and stored in a Chroma vector database. Relevant guidance is retrieved dynamically during trip planning.
+A knowledge base of EV charging best practices is embedded using sentence-transformer embeddings and stored in a Chroma vector database.
 
-### Preference Parsing
+Relevant guidance is retrieved dynamically during trip planning to provide context-aware recommendations.
 
-User trip preferences written in natural language are parsed to extract planning constraints such as:
+## Preference Parsing
 
-• safety battery buffer  
-• charging strategy  
-• optimization objective  
+Drivers can describe their trip preferences in natural language such as:
 
-Claude-based parsing is supported with a local fallback parser to ensure system resilience.
+- maintain higher battery buffer
+- prioritize sustainability
+- minimize charging time
 
-### Charging Optimization
+An LLM-based parser interprets these preferences and converts them into structured planning parameters.
 
-The route optimizer evaluates:
+A local fallback parser ensures the system continues operating even when the external LLM service is unavailable.
 
-• vehicle battery capacity  
-• energy consumption per mile  
-• charger power levels  
-• route distance  
+## Charging Optimization Engine
 
-It selects charging stops that minimize total trip time while maintaining a safe arrival battery level.
+The trip planning engine evaluates:
+
+- vehicle battery capacity
+- energy consumption per mile
+- route distance
+- charger power levels
+- safety battery buffers
+
+The optimizer selects charging stops that minimize total travel time while maintaining a safe battery reserve.
 
 ---
 
@@ -106,48 +87,53 @@ Route: Los Angeles → San Francisco
 Vehicle: Mercedes EQE SUV  
 Starting Battery: 65%
 
-Output:
+System Output:
 
-• Optimized charging stop recommendation  
-• Estimated charging time  
-• Estimated trip duration  
-• Sustainability score  
+- optimized charging stop recommendation
+- estimated charging time
+- estimated total trip duration
+- sustainability score
 
 ---
 
+## Live Demo
+
+https://ai-ev-mobility-copilot.streamlit.app
+
 # Product Thinking
 
-The goal of this project is to demonstrate how **AI can move in-car assistants from command-based systems to decision-support copilots**.
+This project explores how automotive AI systems can evolve from simple command-based assistants to **context-aware mobility copilots**.
 
-Instead of asking drivers to manually plan charging stops, the system:
+Instead of requiring drivers to manually estimate charging stops, the system:
 
-• predicts charging needs  
-• recommends efficient charging stations  
-• integrates sustainability considerations  
-• explains planning decisions using EV guidance
+- predicts charging needs
+- recommends efficient charging locations
+- integrates sustainability considerations
+- explains decisions using EV knowledge retrieval
 
 ---
 
 # Project Structure
 ai-ev-mobility-copilot
 │
-├─ app.py
-├─ data/
-│ ├─ routes.csv
-│ ├─ chargers.csv
-│ └─ vehicle_profiles.csv
+├── app.py
 │
-├─ rag/
-│ ├─ knowledge.md
-│ └─ chroma_db/
+├── data
+│ ├── routes.csv
+│ ├── chargers.csv
+│ └── vehicle_profiles.csv
 │
-├─ scripts/
-│ └─ embed_knowledge.py
+├── rag
+│ ├── knowledge.md
+│ └── chroma_db
 │
-├─ assets/
-│ └─ architecture.png
+├── scripts
+│ └── embed_knowledge.py
 │
-└─ README.
+├── assets
+│ └── architecture.png
+│
+└── README.md
 
 
 ---
@@ -155,7 +141,7 @@ ai-ev-mobility-copilot
 # Running the Prototype
 
 Clone the repository:
-git clone https://github.com/yashdubey727/ai-ev-mobility-copilot.git
+https://github.com/yashdubey727/ai-ev-mobility-copilot
 
 
 Install dependencies:
@@ -169,14 +155,28 @@ streamlit run app.py
 
 # Future Improvements
 
-• Real-time charging station availability  
-• Integration with real map routing APIs  
-• pricing-aware charging optimization  
-• vehicle-specific charging curves  
-• personalized driver energy profiles
+- real-time charging station availability
+- integration with navigation APIs
+- pricing-aware charging optimization
+- vehicle-specific charging curves
+- driver behavior learning for energy prediction
 
 ---
 
 # Why This Project Matters
 
-This prototype demonstrates how AI can power **intelligent EV mobility systems**, combining machine learning, optimization, and product design to improve long-distance electric vehicle travel.
+This prototype demonstrates how AI can power intelligent EV mobility systems by combining machine learning, retrieval-based knowledge systems, and optimization algorithms to improve long-distance electric vehicle travel.
+
+The approach illustrates how future automotive AI assistants could proactively guide drivers through complex mobility decisions rather than simply responding to commands.
+
+# Business Impact
+
+Estimated Business Impact
+
+If deployed across EV fleets:
+
+• Reduce EV trip planning friction by ~40%  
+• Improve charging efficiency by ~15–20%  
+• Increase driver confidence in long-distance EV travel  
+• Strengthen digital mobility service adoption
+
