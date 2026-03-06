@@ -1,0 +1,8 @@
+charger_id,name,near_city,network,fast_charge_kw,price_per_kwh,corridor,route_key,mile_from_start
+1,Electrify America Bakersfield,Bakersfield CA,Electrify America,350,0.48,CA_I5,LA_SF,115
+2,Electrify America Kettleman City,Kettleman City CA,Electrify America,350,0.48,CA_I5,LA_SF,205
+3,Electrify America San Jose,San Jose CA,Electrify America,350,0.48,CA_I5,LA_SF,335
+4,EVgo Newark DE,Newark DE,EVgo,150,0.52,NE_I95,NYC_DC,120
+5,Electrify America Baltimore,Baltimore MD,Electrify America,350,0.48,NE_I95,NYC_DC,170
+6,ChargePoint Tacoma,Tacoma WA,ChargePoint,125,0.45,PNW_I5,SEA_PDX,35
+7,EVgo Vancouver WA,Vancouver WA,EVgo,150,0.52,PNW_I5,SEA_PDX,140

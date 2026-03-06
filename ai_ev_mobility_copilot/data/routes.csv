@@ -1,0 +1,6 @@
+route_id,route_key,from_city,to_city,distance_miles,typical_highway_speed_mph,notes,corridor
+1,LA_SF,Los Angeles CA,San Francisco CA,383,68,Common EV corridor,CA_I5
+2,NYC_DC,New York NY,Washington DC,225,62,Northeast corridor,NE_I95
+3,CHI_DET,Chicago IL,Detroit MI,283,65,Midwest corridor,MW_I94
+4,DAL_AUS,Dallas TX,Austin TX,195,70,Texas corridor,TX_I35
+5,SEA_PDX,Seattle WA,Portland OR,174,60,PNW corridor,PNW_I5

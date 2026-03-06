@@ -1,0 +1,6 @@
+streamlit
+pandas
+numpy
+anthropic
+chromadb
+sentence-transformers

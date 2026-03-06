@@ -1,0 +1,4 @@
+vehicle_id,name,battery_kwh,efficiency_wh_per_mile,fast_charge_kw,max_charge_pct
+1,Mercedes EQE SUV,90,330,170,80
+2,Mercedes EQS Sedan,108,300,200,80
+3,Mercedes EQA,66,320,100,80
